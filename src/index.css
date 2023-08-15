@@ -1,0 +1,131 @@
+/*
+generic styles
+*/
+button {
+	background: none;
+	border: none;
+}
+
+/* Columns style */
+
+.columns-wrapper {
+	height: 100vh;
+	background-color: rgb(248 250 252);
+	user-select: none;
+}
+.columns-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 300px);
+	gap: 1px;
+	overflow: auto;
+}
+
+/* Column  */
+
+.column-wrapper {
+	display: flex;
+	flex-direction: column;
+	padding: 0.75rem;
+	border-radius: 0.5rem; /* 8px */
+}
+.column-title {
+	padding: 0.625rem 0px 0.625rem 0px;
+}
+.cards {
+	display: flex;
+	flex-direction: column;
+	_gap: 0.655rem;
+}
+/* Card */
+.card {
+	padding-top: 0.5rem;
+	padding-left: 0.5rem;
+	padding-bottom: 0.5rem;
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.034);
+	box-shadow:
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+	cursor: grab;
+}
+.card:active {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	cursor: grabbing;
+}
+.card-title {
+	font-size: 1.2rem;
+	color: rgb(55 65 81);
+}
+.card-id-wrapper {
+	padding: 0.8rem 0px 0rem 0px;
+	display: flex;
+	gap: 1rem;
+}
+.card-id {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.04);
+	border-radius: 4px;
+	padding: 0.1rem 10px 0rem 10px;
+	text-align: center;
+	color: rgb(55 65 81);
+}
+
+.card-tag {
+	background: rgba(0, 0, 0, 0.09);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 6px;
+	padding: 0.1rem 10px 0rem 10px;
+	color: rgb(55 65 81);
+}
+.card-btn {
+	width: 40px;
+	height: 40px;
+	color: rgb(55 65 81);
+	border-radius: 999px;
+}
+.card-icon {
+}
+
+.card-icon-wrapper {
+	padding: 0.8rem 0px 0rem 0px;
+	display: flex;
+}
+
+.drop-area {
+	position: relative;
+	transition-property: padding, opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 500ms;
+	height: 1rem;
+}
+.drop-area::before {
+	content: "";
+	position: absolute;
+	border-radius: 0.75rem; /* 12px */
+	border-width: 2px;
+	border-style: dashed;
+	border-color: rgb(107 114 128);
+	background: #fff;
+	inset: 0.5rem; /* 8px */
+
+}
+.drop-area:only-child {
+	height: 10rem; /* 128px */
+}
+
+/*Animtation*/
+
+.animate-pulse {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
